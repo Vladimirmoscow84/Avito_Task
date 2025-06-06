@@ -1,7 +1,5 @@
 package main
 
-import "github.com/goforj/godump"
-
 type stack []string
 
 func (s *stack) isEmpty() bool {
@@ -9,7 +7,7 @@ func (s *stack) isEmpty() bool {
 }
 
 func (s *stack) push(value string) {
-	(*s) = append((*s), value)
+	*s = append(*s, value)
 }
 
 func (s *stack) pop() (string, bool) {
@@ -57,5 +55,5 @@ func main() {
 			color[key] = "black"
 		}
 	}
-	godump.Dump(res)
+	// godump.Dump(res)
 }
