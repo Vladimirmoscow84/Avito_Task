@@ -15,26 +15,17 @@ func getSumTwoSlices(arr1, arr2 []int) []int {
 	// длина результирующего слайса
 	length := max(len(arr1), len(arr2)) + 1
 
-	//емкость результирующего слайса
-	capacity := length
-
 	//создаем результирующий слайс
-	resSlice := make([]int, length, capacity)
+	resSlice := make([]int, length)
 
 	//создаем два слайса, у которых в последствии будут длины как у результирующего для упращения складывания элементов
 	slice1 := make([]int, length-len(arr1))
 	slice2 := make([]int, length-len(arr2))
 
 	//заполняем slice1
-	for i := 0; i < len(slice1); i++ {
-		slice1[i] = 0
-	}
 	slice1 = append(slice1, arr1...)
 
 	//заполняем slice2
-	for i := 0; i < len(slice2); i++ {
-		slice2[i] = 0
-	}
 	slice2 = append(slice2, arr2...)
 
 	//заполняем результирующий слайс
