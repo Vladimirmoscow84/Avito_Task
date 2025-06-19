@@ -52,3 +52,11 @@ func TestSumTwoSlices(t *testing.T) {
 	}
 
 }
+
+func BenchmarkGetSumTwoSlices(b *testing.B) {
+	slice1 := []int{6, 7, 5, 4, 3, 9, 0, 1, 8}
+	slice2 := []int{5, 8, 6, 3}
+	for b.Loop() {
+		getSumTwoSlices(slice1, slice2)
+	}
+}
